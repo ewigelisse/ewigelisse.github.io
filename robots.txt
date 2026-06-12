@@ -1,0 +1,16 @@
+# Internet Archive / Wayback Machine
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: ia_archiver-web.archive.org
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: Wayback
+Disallow: /
+
+# Allow normal search engines to index the site
+User-agent: *
+Disallow:
