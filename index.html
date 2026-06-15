@@ -323,7 +323,7 @@ footer .links a:hover{color:var(--accent)}
     <a href="https://www.linkedin.com/in/muhteremhoser/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.shutterstock.com/g/MuhteremH?rid=297482158" target="_blank" rel="noopener">Shutterstock</a>
     <a href="https://www.researchgate.net/profile/Muhterem-Hoser" target="_blank" rel="noopener" id="rg-link-footer">ResearchGate</a>
-    <a href="https://github.com/ewigelisse" target="_blank" rel="noopener">GitHub</a>
+    <a href="#" target="_blank">GitHub</a>
   </div>
   <div class="copy">© 2026 — M.Arch · 3D Artist · AI Engineering</div>
 </footer>
@@ -339,7 +339,6 @@ const archProjects = [
   {title:"Aydın Büyükşehir Projeleri", desc:"Belediye uygulama projeleri için 3D render çalışmaları.", tags:["Uygulama","Render"], img:""},
 ];
 const aiProjects = [
-  {title:"Cute Digital Planner", desc:"Tarayıcıda çalışan, verileri yerel olarak saklayan etkileşimli dijital ajanda: günlük/haftalık/aylık plan, alışkanlık ve mood takibi, çalışma zamanlayıcısı ve istatistik panosu. Canlı.", tags:["JavaScript","Web App","UI"], img:"planner-cover.jpg", link:"https://ewigelisse.github.io/cute-planner/"},
   {title:"RAG Tabanlı Asistan", desc:"Belge tabanlı soru-cevap sistemi.", tags:["Python","RAG","LLM"], img:""},
   {title:"Render Sınıflandırıcı", desc:"Mimari görselleri stiline göre etiketleyen model.", tags:["PyTorch","CV"], img:""},
   {title:"Prompt Lab", desc:"Tasarım brief'lerini prompt'a çeviren araç.", tags:["LLM","Tool"], img:""},
@@ -350,15 +349,14 @@ function card(p){
   const img = p.img
     ? `<img src="${p.img}" alt="${p.title}">`
     : `<div class="ph">[ görsel buraya ]<br>${p.title}</div>`;
-  const inner = `<div class="thumb">${img}</div>
+  return `<article class="card reveal">
+    <div class="thumb">${img}</div>
     <div class="card-body">
-      <h3>${p.title}${p.link?' <span style="color:var(--accent);font-size:.8em;vertical-align:middle">↗</span>':''}</h3>
+      <h3>${p.title}</h3>
       <p>${p.desc}</p>
       <div class="meta">${p.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>
-    </div>`;
-  return p.link
-    ? `<a class="card reveal" href="${p.link}" target="_blank" rel="noopener">${inner}</a>`
-    : `<article class="card reveal">${inner}</article>`;
+    </div>
+  </article>`;
 }
 const research = [
   {title:"Yayın başlığı", desc:"Yayın özeti / konusu buraya gelecek.", tags:["Yayın"], img:""},
@@ -417,7 +415,7 @@ setWorld("arch");
 <!-- ===== Çerez onayı (analitik araçlar yalnızca onaydan sonra yüklenir) ===== -->
 <div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:var(--surface);border-top:1px solid var(--line);padding:18px 22px;box-shadow:0 -8px 30px -18px rgba(0,0,0,.4)">
   <div style="max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between">
-    <p style="margin:0;font-size:.9rem;color:var(--text-soft);max-width:62ch;line-height:1.5">This site would like to use a cookie to record visitor activity, including approximate location and IP address, for analytics. Nothing is recorded unless you accept.</p>
+    <p style="margin:0;font-size:.9rem;color:var(--text-soft);max-width:62ch;line-height:1.5">This site would like to use a cookie to record visitor activity, including approximate location, for analytics. Nothing is recorded unless you accept.</p>
     <div style="display:flex;gap:10px;flex-shrink:0">
       <button id="cookie-reject" class="btn ghost" style="padding:10px 20px;font-size:.9rem">Decline</button>
       <button id="cookie-accept" class="btn primary" style="padding:10px 20px;font-size:.9rem">Accept</button>
