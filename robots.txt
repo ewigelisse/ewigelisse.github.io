@@ -14,3 +14,5 @@ Disallow: /
 # Allow normal search engines to index the site
 User-agent: *
 Disallow:
+
+Sitemap: https://muhteremhoser.com/sitemap.xml
