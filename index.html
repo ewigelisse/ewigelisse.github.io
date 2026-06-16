@@ -431,56 +431,5 @@ document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 setWorld("arch");
 </script>
 
-<!-- ===== Çerez onayı (analitik araçlar yalnızca onaydan sonra yüklenir) ===== -->
-<div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:var(--surface);border-top:1px solid var(--line);padding:18px 22px;box-shadow:0 -8px 30px -18px rgba(0,0,0,.4)">
-  <div style="max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between">
-    <p style="margin:0;font-size:.9rem;color:var(--text-soft);max-width:62ch;line-height:1.5">This site would like to use a cookie to record visitor activity, including approximate location, for analytics. Nothing is recorded unless you accept.</p>
-    <div style="display:flex;gap:10px;flex-shrink:0">
-      <button id="cookie-reject" class="btn ghost" style="padding:10px 20px;font-size:.9rem">Decline</button>
-      <button id="cookie-accept" class="btn primary" style="padding:10px 20px;font-size:.9rem">Accept</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  function loadGA(){
-    var s=document.createElement('script');
-    s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-FTR1K3CLTB';
-    document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[];
-    window.gtag=function(){dataLayer.push(arguments);};
-    gtag('js', new Date());
-    gtag('config','G-FTR1K3CLTB');
-  }
-  function loadStatcounter(){
-    window.sc_project=13293989; window.sc_invisible=1; window.sc_security="fd0a02fd";
-    var s=document.createElement('script');
-    s.type='text/javascript'; s.async=true;
-    s.src='https://www.statcounter.com/counter/counter.js';
-    document.body.appendChild(s);
-  }
-  // Google Analytics anonimdir, IP göstermez — onay gerektirmeden çalışır.
-  loadGA();
-
-  // IP kaydeden StatCounter yalnızca kullanıcı onayıyla yüklenir.
-  var banner=document.getElementById('cookie-banner');
-  var choice=null;
-  try{ choice=localStorage.getItem('cookie-consent'); }catch(e){}
-
-  if(choice==='accepted'){ loadStatcounter(); }
-  else if(choice!=='rejected'){ banner.style.display='block'; }
-
-  document.getElementById('cookie-accept').addEventListener('click',function(){
-    try{ localStorage.setItem('cookie-consent','accepted'); }catch(e){}
-    banner.style.display='none';
-    loadStatcounter();
-  });
-  document.getElementById('cookie-reject').addEventListener('click',function(){
-    try{ localStorage.setItem('cookie-consent','rejected'); }catch(e){}
-    banner.style.display='none';
-  });
-})();
-</script>
 </body>
 </html>
