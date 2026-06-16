@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Segoe UI',system-ui,sans-serif">
+  <rect width="800" height="600" fill="#f3f1fb"/>
+  <!-- sidebar -->
+  <rect x="0" y="0" width="196" height="600" fill="#ffffff"/>
+  <text x="26" y="52" font-size="22">🪺</text>
+  <text x="54" y="54" font-size="19" font-weight="700" fill="#2b2740">MumuFlow</text>
+  <!-- active item -->
+  <rect x="16" y="86" width="164" height="40" rx="11" fill="#ece8fb"/>
+  <text x="32" y="112" font-size="16">🏠</text>
+  <text x="58" y="112" font-size="14.5" font-weight="600" fill="#5b4bd6">Ana Panel</text>
+  <g font-size="14.5" fill="#7b748f">
+    <text x="32" y="158">🎯</text><text x="58" y="158">Focus Timer</text>
+    <text x="32" y="200">✈️</text><text x="58" y="200">Flight Focus</text>
+    <text x="32" y="242">✅</text><text x="58" y="242">Görevler</text>
+    <text x="32" y="284">📓</text><text x="58" y="284">Duygu Köşesi</text>
+    <text x="32" y="326">🧠</text><text x="58" y="326">Beyin Boşaltma</text>
+    <text x="32" y="368">📊</text><text x="58" y="368">İstatistikler</text>
+    <text x="32" y="410">🍩</text><text x="58" y="410">Proje Dağılımı</text>
+    <text x="32" y="452">📈</text><text x="58" y="452">Haftalık Rapor</text>
+    <text x="32" y="494">⚙️</text><text x="58" y="494">Ayarlar</text>
+  </g>
+
+  <!-- main -->
+  <text x="236" y="70" font-size="34" font-weight="800" fill="#2b2740">Merhaba 👋</text>
+  <text x="238" y="98" font-size="14" fill="#9a93ad">16 Haziran 2026 Salı</text>
+
+  <!-- AI summary card -->
+  <rect x="236" y="120" width="540" height="96" rx="16" fill="#ffffff"/>
+  <text x="258" y="150" font-size="11" letter-spacing="1.5" font-weight="700" fill="#a99fd6">BUGÜNÜN AI ÖZETİ</text>
+  <text x="258" y="176" font-size="15" font-weight="600" fill="#39334f">🌱 Güne taze başlıyorsun. Küçük bir adım bile bugünü değiştirir.</text>
+  <text x="258" y="198" font-size="12.5" fill="#9a93ad">Her gün üretken olmak zorunda değil. Burada olman güzel.</text>
+
+  <!-- stat cards -->
+  <g>
+    <rect x="236" y="232" width="124" height="104" rx="14" fill="#ffffff"/>
+    <text x="252" y="266" font-size="18">🎯</text>
+    <text x="252" y="300" font-size="26" font-weight="800" fill="#2b2740">0 d</text>
+    <text x="252" y="320" font-size="11.5" fill="#9a93ad">Focus süresi</text>
+
+    <rect x="372" y="232" width="124" height="104" rx="14" fill="#ffffff"/>
+    <text x="388" y="266" font-size="18">✅</text>
+    <text x="388" y="300" font-size="26" font-weight="800" fill="#2b2740">0</text>
+    <text x="388" y="320" font-size="11.5" fill="#9a93ad">Tamamlanan</text>
+
+    <rect x="508" y="232" width="124" height="104" rx="14" fill="#ffffff"/>
+    <text x="524" y="266" font-size="18">⏳</text>
+    <text x="524" y="300" font-size="26" font-weight="800" fill="#2b2740">0</text>
+    <text x="524" y="320" font-size="11.5" fill="#9a93ad">Yarım kalan</text>
+
+    <rect x="644" y="232" width="124" height="104" rx="14" fill="#ffffff"/>
+    <text x="660" y="266" font-size="18">😊</text>
+    <text x="660" y="300" font-size="26" font-weight="800" fill="#c9c3df">—</text>
+    <text x="660" y="320" font-size="11.5" fill="#9a93ad">Ruh hali</text>
+  </g>
+
+  <!-- prompt card -->
+  <rect x="236" y="352" width="540" height="120" rx="16" fill="#ffffff"/>
+  <text x="258" y="382" font-size="11" letter-spacing="1.5" font-weight="700" fill="#a99fd6">ŞİMDİ NE YAPMALIYIM?</text>
+  <text x="258" y="408" font-size="14" fill="#39334f">Şu an net bir görev yok. İstersen küçük bir başlangıç seçelim.</text>
+  <rect x="258" y="426" width="220" height="34" rx="17" fill="#e7c9a8"/>
+  <text x="276" y="448" font-size="12.5" font-weight="600" fill="#7a5326">🚩 Bugün minimum ne yapsam yeter?</text>
+  <rect x="490" y="426" width="150" height="34" rx="17" fill="#f1eefb" stroke="#e0daf4"/>
+  <text x="508" y="448" font-size="12.5" fill="#6b6385">⏱ 2 dakikalık başlangıç</text>
+
+  <!-- quick actions -->
+  <text x="236" y="500" font-size="11" letter-spacing="1.5" font-weight="700" fill="#a99fd6">HIZLI KAYIT</text>
+  <g>
+    <rect x="236" y="512" width="128" height="62" rx="13" fill="#ffffff"/>
+    <text x="252" y="540" font-size="16">🎯</text><text x="252" y="560" font-size="12" font-weight="600" fill="#39334f">Focus başlat</text>
+    <rect x="376" y="512" width="128" height="62" rx="13" fill="#ffffff"/>
+    <text x="392" y="540" font-size="16">➕</text><text x="392" y="560" font-size="12" font-weight="600" fill="#39334f">Görev ekle</text>
+    <rect x="516" y="512" width="128" height="62" rx="13" fill="#ffffff"/>
+    <text x="532" y="540" font-size="16">🗨️</text><text x="532" y="560" font-size="12" font-weight="600" fill="#39334f">His yaz</text>
+    <rect x="656" y="512" width="120" height="62" rx="13" fill="#ffffff"/>
+    <text x="672" y="540" font-size="16">🌙</text><text x="672" y="560" font-size="12" font-weight="600" fill="#39334f">Gün sonu</text>
+  </g>
+</svg>
