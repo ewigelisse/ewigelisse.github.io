@@ -218,6 +218,7 @@ footer .links a:hover{color:var(--accent)}
   <div class="nav-links">
     <a href="#arch">Mimarlık</a>
     <a href="#ai">AI</a>
+    <a href="#projects">Projeler</a>
     <a href="#research">Research</a>
     <a href="#about">Hakkımda</a>
     <a href="#contact">İletişim</a>
@@ -266,11 +267,23 @@ footer .links a:hover{color:var(--accent)}
   <div class="grid" id="ai-grid"></div>
 </section>
 
+<!-- PROJELER -->
+<section id="projects" class="wrap">
+  <div class="sec-head reveal">
+    <div>
+      <div class="tag">03 — Projeler</div>
+      <h2>Web & Uygulamalar</h2>
+    </div>
+    <p>Geliştirdiğim web uygulamaları ve dijital araçlar.</p>
+  </div>
+  <div class="grid" id="projects-grid"></div>
+</section>
+
 <!-- RESEARCH -->
 <section id="research" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <div class="tag">03 — Research</div>
+      <div class="tag">04 — Research</div>
       <h2>Akademik Çalışmalar</h2>
     </div>
     <div>
@@ -349,21 +362,28 @@ function card(p){
   const img = p.img
     ? `<img src="${p.img}" alt="${p.title}">`
     : `<div class="ph">[ görsel buraya ]<br>${p.title}</div>`;
-  return `<article class="card reveal">
-    <div class="thumb">${img}</div>
+  const inner = `<div class="thumb">${img}</div>
     <div class="card-body">
-      <h3>${p.title}</h3>
+      <h3>${p.title}${p.url ? ' <span style="color:var(--accent)">↗</span>' : ''}</h3>
       <p>${p.desc}</p>
       <div class="meta">${p.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>
-    </div>
-  </article>`;
+    </div>`;
+  if(p.url){
+    return `<a class="card reveal" href="${p.url}" target="_blank" rel="noopener">${inner}</a>`;
+  }
+  return `<article class="card reveal">${inner}</article>`;
 }
 const research = [
   {title:"Yayın başlığı", desc:"Yayın özeti / konusu buraya gelecek.", tags:["Yayın"], img:""},
   {title:"Konferans bildirisi", desc:"Sunum veya bildiri açıklaması.", tags:["Konferans"], img:""},
 ];
+const projects = [
+  {title:"MumuFlow", desc:"Kişisel odak paneli: focus timer, görevler, duygu köşesi ve istatistikler.", tags:["Web App","Productivity"], img:"", url:"https://mumuflow.com"},
+  {title:"Cute Planner", desc:"Sevimli ve sade bir dijital planlayıcı uygulaması.", tags:["Web App","Planner"], img:"planner-cover.jpg", url:"https://ewigelisse.github.io/cute-planner/"},
+];
 document.getElementById("arch-grid").innerHTML = archProjects.map(card).join("");
 document.getElementById("ai-grid").innerHTML = aiProjects.map(card).join("");
+document.getElementById("projects-grid").innerHTML = projects.map(card).join("");
 document.getElementById("research-grid").innerHTML = research.map(card).join("");
 
 /* ---------- world toggle ---------- */
