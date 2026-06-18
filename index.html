@@ -438,7 +438,7 @@ const COPY = {
   }
 };
 const HEROBTN = { tr:{a:'Mimari işleri gör',b:'AI projelerine geç'}, en:{a:'See architecture work',b:'Go to AI projects'} };
-const TAG = {'İç Mekan':'Interior','Hotel':'Hotel','V-Ray':'V-Ray','Konut':'Residential','Render':'Render','Ticari':'Commercial','Konsept':'Concept','Restorasyon':'Restoration','Tarihi Yapı':'Historic','Mobilya':'Furniture','Ürün Tasarımı':'Product Design','3D':'3D','Kolaj':'Collage','Mimari Temsil':'Architectural Repr.','Python':'Python','RAG':'RAG','LLM':'LLM','PyTorch':'PyTorch','CV':'CV','Tool':'Tool','Viz':'Viz','Web App':'Web App','Productivity':'Productivity','Planner':'Planner','Yayın':'Publication','Konferans':'Conference'};
+const TAG = {'İç Mekan':'Interior','Hotel':'Hotel','V-Ray':'V-Ray','Konut':'Residential','Render':'Render','Ticari':'Commercial','Konsept':'Concept','Restorasyon':'Restoration','Tarihi Yapı':'Historic','Mobilya':'Furniture','Ürün Tasarımı':'Product Design','3D':'3D','Kolaj':'Collage','Mimari Temsil':'Architectural Repr.','Python':'Python','RAG':'RAG','LLM':'LLM','PyTorch':'PyTorch','CV':'CV','Tool':'Tool','Viz':'Viz','Web App':'Web App','Productivity':'Productivity','Planner':'Planner','Yayın':'Publication','Konferans':'Conference','İç Mimari':'Interior Arch.','Makale':'Article','Yeşil Bina':'Green Building','Palimpsest':'Palimpsest','Koruma':'Conservation','Tez':'Thesis','Renk':'Color'};
 
 const archProjects = [
   {title:"Hotel Design", desc:"Otel odası ve yaşam alanı için fotogerçekçi iç mekan render serisi.", en:"A photorealistic interior render series for a hotel room and living area.", tags:["İç Mekan","Hotel","V-Ray"], img:"assets/renders/hotel-01.jpg",
@@ -460,9 +460,57 @@ const aiProjects = [
   {title:"Prompt Lab", desc:"Tasarım brief'lerini prompt'a çeviren araç.", en:"A tool that turns design briefs into prompts.", tags:["LLM","Tool"], img:""},
   {title:"Veri Görselleştirme", titleEn:"Data Visualization", desc:"Model deneylerini izleyen dashboard.", en:"A dashboard for tracking model experiments.", tags:["Python","Viz"], img:""},
 ];
+function rcover(c1,c2){
+  const svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'>"
+    + "<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='"+c1+"'/><stop offset='1' stop-color='"+c2+"'/></linearGradient></defs>"
+    + "<rect width='400' height='300' fill='url(#g)'/>"
+    + "<g fill='none' stroke='rgba(255,255,255,.92)' stroke-width='6' stroke-linejoin='round' stroke-linecap='round'>"
+    + "<path d='M150 92 h66 l42 42 v98 a6 6 0 0 1 -6 6 H150 a6 6 0 0 1 -6 -6 V98 a6 6 0 0 1 6 -6 z'/>"
+    + "<path d='M216 92 v42 h42'/>"
+    + "<path d='M166 160 h54 M166 182 h68 M166 204 h68'/>"
+    + "</g></svg>";
+  return "data:image/svg+xml,"+encodeURIComponent(svg);
+}
 const research = [
-  {title:"Yayın başlığı", titleEn:"Publication title", desc:"Yayın özeti / konusu buraya gelecek.", en:"Publication summary / topic goes here.", tags:["Yayın"], img:""},
-  {title:"Konferans bildirisi", titleEn:"Conference paper", desc:"Sunum veya bildiri açıklaması.", en:"Talk or paper description.", tags:["Konferans"], img:""},
+  {title:"Text-to-Image AI in Interior Architecture Design: A Multi-Criteria Decision-Making Approach",
+   desc:"Metinden görüntüye yapay zekânın iç mimari tasarımda çok kriterli karar verme ile değerlendirilmesi.",
+   en:"Evaluating text-to-image AI in interior architecture design via multi-criteria decision-making.",
+   tags:["AI","İç Mimari","Makale"], img:rcover('#6d6af5','#9b8bff'),
+   url:"https://www.researchgate.net/publication/403334694_Text-to-Image_Artificial_Intelligence_in_Interior_Architecture_Design_A_Multi-Criteria_Decision-Making_Approach"},
+  {title:"Shaping Ecological Spaces Through AI & Green Building Certification Systems",
+   desc:"Yapay zekâ ve yeşil bina sertifika sistemlerinin entegrasyonuyla ekolojik mekânların biçimlenmesi.",
+   en:"Shaping ecological spaces by integrating AI and green building certification systems.",
+   tags:["AI","Yeşil Bina","Makale"], img:rcover('#3f9d6b','#74c79a'),
+   url:"https://www.researchgate.net/publication/399142369_Shaping_Ecological_Spaces_Through_the_Integration_of_Artificial_Intelligence_and_Green_Building_Certification_Systems"},
+  {title:"Palimpsest Yaklaşımı ve Parazit Mekânlar: Bakırköy Baruthanesi İncelemesi",
+   titleEn:"Palimpsest Approach and Parasite Spaces: A Study of the Bakırköy Gunpowder Factory",
+   desc:"Palimpsest yaklaşımı ve parazit mekânlar üzerinden Bakırköy Baruthanesi incelemesi.",
+   en:"A study of the palimpsest approach and parasite spaces at the Bakırköy Gunpowder Factory.",
+   tags:["Palimpsest","Koruma","Makale"], img:rcover('#8d6bd2','#b89ce8'),
+   url:"https://www.researchgate.net/publication/392385540_PALIMPSEST_YAKLASIMI_VE_PARAZIT_MEKANLAR_BAKIRKOY_BARUTHANESI_INCELEMESI"},
+  {title:"Tarihi Endüstriyel Binaların Korunması ve İşlev Değişikliği: Aydın Tekstil Fabrikası Örneği",
+   titleEn:"Conservation and Adaptive Reuse of Historic Industrial Buildings: The Aydın Textile Factory",
+   desc:"Tarihi endüstriyel binaların koruma eylemi ve işlev değişikliğinin kentsel mekâna etkileri.",
+   en:"The urban impact of conserving and re-functioning historic industrial buildings.",
+   tags:["Restorasyon","Koruma","Makale"], img:rcover('#9a6a3c','#c9a87f'),
+   url:"https://www.researchgate.net/publication/384536115_Tarihi_Endustriyel_Binalarin_Koruma_Eylemi_ve_Islev_Degisikliginin_Kentsel_Mekana_Etkileri_Aydin_Tekstil_Fabrikasi_Ornegi"},
+  {title:"Metinden Görüntüye Yapay Zekâ Sistemlerinin İç Mimari Tasarıma Katkısı (Yüksek Lisans Tezi)",
+   titleEn:"Contribution of Text-to-Image AI Systems to Interior Architecture Design (M.Sc. Thesis)",
+   desc:"Metinden görüntüye yapay zekâ sistemlerinin iç mimari tasarıma katkısının değerlendirilmesi.",
+   en:"Evaluating the contribution of text-to-image AI systems to interior architecture design.",
+   tags:["AI","İç Mimari","Tez"], img:rcover('#6d6af5','#9b8bff'),
+   url:"https://www.researchgate.net/publication/406994592_METINDEN_GORUNTUYE_YAPAY_ZEKA_SISTEMLERININ_IC_MIMARI_TASARIMA_KATKISININ_DEGERLENDIRILMESI_YUKSEK_LISANS_TEZI"},
+  {title:"Parasite Architectural Approach in the Concept of Palimpsest: Esma Sultan Mansion, Istanbul",
+   desc:"Palimpsest kavramında parazit mimari yaklaşımı; İstanbul Esma Sultan Yalısı örneği.",
+   en:"Parasite architectural approach within the palimpsest concept; the Esma Sultan Mansion, Istanbul.",
+   tags:["Palimpsest","Koruma","Makale"], img:rcover('#8d6bd2','#b89ce8'),
+   url:"https://www.researchgate.net/publication/377335275_Parasite_Architectural_Approach_in_the_Concept_of_Palimpsest_The_Example_of_Esma_Sultan_Mansion_in_Istanbul"},
+  {title:"Metinden Görüntüye Yapay Zekâ Sistemlerinin İç Mekân Renklendirmesine Katkısı",
+   titleEn:"Analysis of Text-to-Image AI Systems in Terms of Contribution to Interior Coloring",
+   desc:"Metinden görüntüye yapay zekâ sistemlerinin iç mekân renklendirmesine katkısının incelenmesi.",
+   en:"Analysis of text-to-image AI systems for their contribution to interior coloring.",
+   tags:["AI","Renk","Makale"], img:rcover('#6d6af5','#9b8bff'),
+   url:"https://www.researchgate.net/publication/375040464_Analysis_of_Text-to-Image_Artificial_Intelligence_Systems_in_Terms_of_Contribution_to_Interior_Coloring_Ic_Mekan_Renklendirmesine_Katki_Acisindan_Metinden_Goruntuye_Yapay_Zeka_Sistemlerinin_Incelenmes"},
 ];
 const projects = [
   {title:"MumuFlow", desc:"Kişisel odak paneli: focus timer, görevler, duygu köşesi ve istatistikler.", en:"Personal focus dashboard: focus timer, tasks, mood corner and stats.", tags:["Web App","Productivity"], img:"mumuflow-cover.svg", url:"https://mumuflow.com"},
