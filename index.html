@@ -274,6 +274,12 @@ html[data-world="ai"] .soon-pill{color:#5ee0c0;background:rgba(94,224,192,.12);b
 .soon-info h3{font-family:var(--font-display);font-weight:500;font-size:1.7rem;margin:16px 0 8px;letter-spacing:-.3px}
 .soon-info p{color:var(--text-soft);max-width:48ch}
 @media(max-width:600px){.soon-art{flex-basis:100%}}
+.cert{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;transition:border-color .3s,transform .3s var(--ease);max-width:430px}
+.cert:hover{border-color:var(--accent);transform:translateY(-2px)}
+.cert img{width:74px;height:auto;border-radius:6px;border:1px solid var(--line);flex:0 0 auto;pointer-events:none}
+.cert-info{display:flex;flex-direction:column;gap:3px}
+.cert-info strong{font-family:var(--font-body);font-size:.98rem;color:var(--text);font-weight:600}
+.cert-info span{font-family:var(--font-mono);font-size:.74rem;color:var(--text-soft);line-height:1.45}
 </style>
 </head>
 <body>
@@ -374,6 +380,15 @@ html[data-world="ai"] .soon-pill{color:#5ee0c0;background:rgba(94,224,192,.12);b
         <span class="chip">AutoCAD</span><span class="chip">SolidWorks</span><span class="chip">Adobe</span>
         <span class="chip">Python</span><span class="chip">AI / ML</span>
       </div>
+      <h4 class="lbl" data-i18n="about.certs">Sertifikalar</h4>
+      <a class="cert" href="balkan-game-camp.pdf" target="_blank" rel="noopener">
+        <img src="balkan-game-camp.jpg" alt="Balkan Game Camp — Erasmus+ Youthpass sertifikası" loading="lazy">
+        <div class="cert-info">
+          <strong>Balkan Game Camp</strong>
+          <span>Erasmus+ · Youthpass — Bilişim Vadisi</span>
+          <span class="cert-loc" data-i18n="cert.loc">Skopje · Nisan 2025</span>
+        </div>
+      </a>
     </div>
     <div class="side">
       <h4 data-i18n="about.edu">Eğitim</h4>
@@ -416,7 +431,7 @@ const T = {
     'about.h2':'Hakkımda',
     'about.bio1':"Yüksek Mimar (M.Arch) ve 3D artist'im; aynı zamanda Mimarlık alanında doktora (PhD) öğrencisiyim ve yapay zeka mühendisliği üzerine lisans eğitimi alıyorum. Mimari ve görselleştirme arka planımı, veriyle ve modellerle düşünmenin disipliniyle birleştiriyorum.",
     'about.bio2':'Bir tarafta malzeme, ışık ve oran; diğer tarafta veri, model ve sistem. İkisi de aynı soruyu soruyor: insanlar için daha iyi olan nasıl tasarlanır?',
-    'about.skills':'Yetkinlikler','about.edu':'Eğitim','about.exp':'Deneyim',
+    'about.skills':'Yetkinlikler','about.edu':'Eğitim','about.exp':'Deneyim','about.certs':'Sertifikalar','cert.loc':'Skopje · Nisan 2025',
     'footer.h2':'Birlikte çalışalım.','footer.sub':'Bir proje, iş birliği ya da sadece merhaba demek için ulaş.'
   },
   en:{
@@ -431,7 +446,7 @@ const T = {
     'about.h2':'About',
     'about.bio1':"I'm an Architect (M.Arch) and 3D artist; I'm also a PhD student in Architecture and studying AI Engineering at undergraduate level. I combine my architecture and visualization background with the discipline of thinking through data and models.",
     'about.bio2':'On one side: material, light and proportion; on the other: data, models and systems. Both ask the same question: how do we design something better for people?',
-    'about.skills':'Skills','about.edu':'Education','about.exp':'Experience',
+    'about.skills':'Skills','about.edu':'Education','about.exp':'Experience','about.certs':'Certificates','cert.loc':'Skopje · April 2025',
     'footer.h2':"Let's work together.",'footer.sub':'Reach out for a project, a collaboration, or just to say hello.'
   }
 };
