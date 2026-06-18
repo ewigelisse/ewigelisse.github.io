@@ -265,6 +265,15 @@ footer .links a:hover{color:var(--accent)}
 }
 .lang-toggle{border:1px solid var(--line);background:var(--surface);color:var(--text-soft);border-radius:999px;padding:6px 13px;font-size:.78rem;font-family:var(--font-body);font-weight:600;cursor:pointer;transition:all .3s var(--ease)}
 .lang-toggle:hover{color:var(--text);border-color:var(--accent)}
+.soon{grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;overflow:hidden}
+.soon-art{flex:0 0 300px;max-width:100%;border-radius:12px;overflow:hidden;line-height:0;box-shadow:0 14px 36px -20px rgba(0,0,0,.45)}
+.soon-art svg{width:100%;height:auto;display:block}
+.soon-info{flex:1;min-width:240px}
+.soon-pill{display:inline-block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:#0f766e;background:rgba(15,118,110,.12);border:1px solid rgba(15,118,110,.32);padding:5px 13px;border-radius:999px}
+html[data-world="ai"] .soon-pill{color:#5ee0c0;background:rgba(94,224,192,.12);border-color:rgba(94,224,192,.35)}
+.soon-info h3{font-family:var(--font-display);font-weight:500;font-size:1.7rem;margin:16px 0 8px;letter-spacing:-.3px}
+.soon-info p{color:var(--text-soft);max-width:48ch}
+@media(max-width:600px){.soon-art{flex-basis:100%}}
 </style>
 </head>
 <body>
@@ -534,6 +543,7 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:.15});
 function observeReveals(){ document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el)); }
 
+const AI_ART = `<svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI"><defs><linearGradient id="aiart" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f3a36"/><stop offset="0.55" stop-color="#0f766e"/><stop offset="1" stop-color="#5ee0c0"/></linearGradient></defs><rect width="320" height="220" fill="url(#aiart)"/><g stroke="rgba(255,255,255,.5)" stroke-width="1.4" fill="none"><path d="M70 58 L160 50 M70 58 L160 110 M70 110 L160 50 M70 110 L160 110 M70 110 L160 170 M70 162 L160 110 M70 162 L160 170 M160 50 L248 110 M160 110 L248 110 M160 170 L248 110"/></g><g fill="#fff"><circle cx="70" cy="58" r="6.5"/><circle cx="70" cy="110" r="6.5"/><circle cx="70" cy="162" r="6.5"/><circle cx="160" cy="50" r="7.5"/><circle cx="160" cy="110" r="7.5"/><circle cx="160" cy="170" r="7.5"/><circle cx="248" cy="110" r="10"/></g><path d="M250 40 l4.5 11 11 4.5 -11 4.5 -4.5 11 -4.5 -11 -11 -4.5 11 -4.5 z" fill="#fff" opacity=".92"/></svg>`;
 function tagTxt(t){ return (LANG==='en' && TAG[t]) ? TAG[t] : t; }
 function card(p){
   const title = (LANG==='en' && p.titleEn) ? p.titleEn : p.title;
@@ -555,7 +565,8 @@ function card(p){
 }
 function renderContent(){
   document.getElementById("arch-grid").innerHTML = archProjects.map(card).join("");
-  document.getElementById("ai-grid").innerHTML = aiProjects.map(card).join("");
+  const _soon = {tr:{pill:'Çok Yakında', h:'AI projeleri yolda', p:'Yapay zeka mühendisliği projelerim çok yakında burada olacak.'}, en:{pill:'Coming Soon', h:'AI projects on the way', p:'My AI engineering projects will be here very soon.'}}[LANG];
+  document.getElementById("ai-grid").innerHTML = `<div class="soon reveal"><div class="soon-art">${AI_ART}</div><div class="soon-info"><span class="soon-pill">${_soon.pill}</span><h3>${_soon.h}</h3><p>${_soon.p}</p></div></div>`;
   document.getElementById("projects-grid").innerHTML = projects.map(card).join("");
   document.getElementById("research-grid").innerHTML = research.map(card).join("");
   document.getElementById("edu-list").innerHTML = EDU.map(e=>`<li><b>${e.t}</b><br>${LANG==='en'?e.en:e.tr}</li>`).join("");
