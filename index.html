@@ -263,6 +263,8 @@ footer .links a:hover{color:var(--accent)}
   .about{grid-template-columns:1fr;gap:30px}
   section{padding:70px 0}
 }
+.lang-toggle{border:1px solid var(--line);background:var(--surface);color:var(--text-soft);border-radius:999px;padding:6px 13px;font-size:.78rem;font-family:var(--font-body);font-weight:600;cursor:pointer;transition:all .3s var(--ease)}
+.lang-toggle:hover{color:var(--text);border-color:var(--accent)}
 </style>
 </head>
 <body>
@@ -270,15 +272,16 @@ footer .links a:hover{color:var(--accent)}
 <nav>
   <a href="#top" class="brand">Muhterem Hoşer<span>.</span></a>
   <div class="nav-links">
-    <a href="#arch">Mimarlık</a>
-    <a href="#ai">AI</a>
-    <a href="#projects">Projeler</a>
-    <a href="#research">Research</a>
-    <a href="#about">Hakkımda</a>
-    <a href="#contact">İletişim</a>
+    <a href="#arch" data-i18n="nav.arch">Mimarlık</a>
+    <a href="#ai" data-i18n="nav.ai">AI</a>
+    <a href="#projects" data-i18n="nav.projects">Projeler</a>
+    <a href="#research" data-i18n="nav.research">Research</a>
+    <a href="#about" data-i18n="nav.about">Hakkımda</a>
+    <a href="#contact" data-i18n="nav.contact">İletişim</a>
+    <button id="langBtn" class="lang-toggle" aria-label="Language">EN</button>
     <div class="toggle" role="tablist" aria-label="Dünya seçici">
-      <button data-w="arch" class="active">Mimarlık</button>
-      <button data-w="ai">AI</button>
+      <button data-w="arch" class="active" data-i18n="toggle.arch">Mimarlık</button>
+      <button data-w="ai" data-i18n="toggle.ai">AI</button>
     </div>
   </div>
 </nav>
@@ -298,12 +301,12 @@ footer .links a:hover{color:var(--accent)}
 <section id="arch" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <div class="tag">01 — Mimarlık & İç Mekan</div>
-      <h2>Renderlar & Projeler</h2>
+      <div class="tag" data-i18n="arch.tag">01 — Mimarlık & İç Mekan</div>
+      <h2 data-i18n="arch.h2">Renderlar & Projeler</h2>
     </div>
     <div>
-      <p>Konsept geliştirmeden fotogerçekçi render'a kadar iç mekan ve mimari çalışmalar.</p>
-      <a href="https://www.shutterstock.com/g/MuhteremH?rid=297482158" target="_blank" rel="noopener" class="btn ghost" style="margin-top:14px;display:inline-block">Shutterstock portföyü ↗</a>
+      <p data-i18n="arch.p">Konsept geliştirmeden fotogerçekçi render'a kadar iç mekan ve mimari çalışmalar.</p>
+      <a href="https://www.shutterstock.com/g/MuhteremH?rid=297482158" target="_blank" rel="noopener" class="btn ghost" style="margin-top:14px;display:inline-block" data-i18n="btn.shutterstock">Shutterstock portföyü ↗</a>
     </div>
   </div>
   <div class="grid" id="arch-grid"></div>
@@ -313,10 +316,10 @@ footer .links a:hover{color:var(--accent)}
 <section id="ai" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <div class="tag">02 — AI Engineering</div>
-      <h2>Yapay Zeka Projeleri</h2>
+      <div class="tag" data-i18n="ai.tag">02 — AI Engineering</div>
+      <h2 data-i18n="ai.h2">Yapay Zeka Projeleri</h2>
     </div>
-    <p>Modellerden uygulamalara: deneyler, araçlar ve uçtan uca AI projeleri.</p>
+    <p data-i18n="ai.p">Modellerden uygulamalara: deneyler, araçlar ve uçtan uca AI projeleri.</p>
   </div>
   <div class="grid" id="ai-grid"></div>
 </section>
@@ -325,10 +328,10 @@ footer .links a:hover{color:var(--accent)}
 <section id="projects" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <div class="tag">03 — Projeler</div>
-      <h2>Web & Uygulamalar</h2>
+      <div class="tag" data-i18n="projects.tag">03 — Projeler</div>
+      <h2 data-i18n="projects.h2">Web & Uygulamalar</h2>
     </div>
-    <p>Geliştirdiğim web uygulamaları ve dijital araçlar.</p>
+    <p data-i18n="projects.p">Geliştirdiğim web uygulamaları ve dijital araçlar.</p>
   </div>
   <div class="grid" id="projects-grid"></div>
 </section>
@@ -337,12 +340,12 @@ footer .links a:hover{color:var(--accent)}
 <section id="research" class="wrap">
   <div class="sec-head reveal">
     <div>
-      <div class="tag">04 — Research</div>
-      <h2>Akademik Çalışmalar</h2>
+      <div class="tag" data-i18n="research.tag">04 — Research</div>
+      <h2 data-i18n="research.h2">Akademik Çalışmalar</h2>
     </div>
     <div>
-      <p>Mimarlık ve yapay zekânın kesişimindeki araştırmalar, yayınlar ve akademik çalışmalar.</p>
-      <a href="https://www.researchgate.net/profile/Muhterem-Hoser" target="_blank" rel="noopener" class="btn ghost" id="rg-link" style="margin-top:14px;display:inline-block">ResearchGate profili ↗</a>
+      <p data-i18n="research.p">Mimarlık ve yapay zekânın kesişimindeki araştırmalar, yayınlar ve akademik çalışmalar.</p>
+      <a href="https://www.researchgate.net/profile/Muhterem-Hoser" target="_blank" rel="noopener" class="btn ghost" id="rg-link" style="margin-top:14px;display:inline-block" data-i18n="btn.researchgate">ResearchGate profili ↗</a>
     </div>
   </div>
   <div class="grid" id="research-grid"></div>
@@ -353,10 +356,10 @@ footer .links a:hover{color:var(--accent)}
   <div class="about reveal">
     <div>
       <img class="portrait" src="profile2.jpeg" alt="Muhterem Hoşer">
-      <h2>Hakkımda</h2>
-      <p>Yüksek Mimar (M.Arch) ve 3D artist'im; aynı zamanda Mimarlık alanında doktora (PhD) öğrencisiyim ve yapay zeka mühendisliği üzerine lisans eğitimi alıyorum. Mimari ve görselleştirme arka planımı, veriyle ve modellerle düşünmenin disipliniyle birleştiriyorum.</p>
-      <p>Bir tarafta malzeme, ışık ve oran; diğer tarafta veri, model ve sistem. İkisi de aynı soruyu soruyor: insanlar için daha iyi olan nasıl tasarlanır?</p>
-      <h4 class="lbl">Yetkinlikler</h4>
+      <h2 data-i18n="about.h2">Hakkımda</h2>
+      <p data-i18n="about.bio1">Yüksek Mimar (M.Arch) ve 3D artist'im; aynı zamanda Mimarlık alanında doktora (PhD) öğrencisiyim ve yapay zeka mühendisliği üzerine lisans eğitimi alıyorum. Mimari ve görselleştirme arka planımı, veriyle ve modellerle düşünmenin disipliniyle birleştiriyorum.</p>
+      <p data-i18n="about.bio2">Bir tarafta malzeme, ışık ve oran; diğer tarafta veri, model ve sistem. İkisi de aynı soruyu soruyor: insanlar için daha iyi olan nasıl tasarlanır?</p>
+      <h4 class="lbl" data-i18n="about.skills">Yetkinlikler</h4>
       <div class="meta">
         <span class="chip">3ds Max</span><span class="chip">Blender</span><span class="chip">V-Ray</span>
         <span class="chip">AutoCAD</span><span class="chip">SolidWorks</span><span class="chip">Adobe</span>
@@ -364,28 +367,18 @@ footer .links a:hover{color:var(--accent)}
       </div>
     </div>
     <div class="side">
-      <h4>Eğitim</h4>
-      <ul>
-        <li><b>PhD, Architecture</b><br>International Balkan University · 2024 – günümüz</li>
-        <li><b>M.Arch, Architecture</b><br>İstanbul Sabahattin Zaim Üniversitesi · 2022 – 2024 · GPA 4.00</li>
-        <li><b>B.Sc, Artificial Intelligence Engineering</b><br>International Balkan University · 2024 – 2028</li>
-        <li><b>B.Arch, Architecture</b><br>İstanbul Sabahattin Zaim Üniversitesi · 2017 – 2021</li>
-      </ul>
-      <h4>Deneyim</h4>
-      <ul>
-        <li><b>Freelance 3D Artist</b><br>2024 – günümüz</li>
-        <li><b>3D Artist</b><br>Rising Global · 2023</li>
-        <li><b>Intern</b><br>MNA İnşaat · 2020 – 2021</li>
-        <li><b>Intern</b><br>Aydın Büyükşehir Belediyesi · 2019</li>
-      </ul>
+      <h4 data-i18n="about.edu">Eğitim</h4>
+      <ul id="edu-list"></ul>
+      <h4 data-i18n="about.exp">Deneyim</h4>
+      <ul id="exp-list"></ul>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <footer id="contact" class="wrap">
-  <h2>Birlikte çalışalım.</h2>
-  <p style="color:var(--text-soft);max-width:40ch;margin:0 auto">Bir proje, iş birliği ya da sadece merhaba demek için ulaş.</p>
+  <h2 data-i18n="footer.h2">Birlikte çalışalım.</h2>
+  <p style="color:var(--text-soft);max-width:40ch;margin:0 auto" data-i18n="footer.sub">Bir proje, iş birliği ya da sadece merhaba demek için ulaş.</p>
   <div class="links">
     <a href="https://www.linkedin.com/in/muhteremhoser/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.shutterstock.com/g/MuhteremH?rid=297482158" target="_blank" rel="noopener">Shutterstock</a>
@@ -396,174 +389,159 @@ footer .links a:hover{color:var(--accent)}
 </footer>
 
 <script>
-/* ---------- project data (kolayca düzenle) ---------- */
-const archProjects = [
-  {
-    title:"Hotel Design",
-    desc:"Otel odası ve yaşam alanı için fotogerçekçi iç mekan render serisi.",
-    tags:["İç Mekan","Hotel","V-Ray"],
-    img:"assets/renders/hotel-01.jpg",
-    gallery:[
-      "assets/renders/hotel-01.jpg",
-      "assets/renders/hotel-02.jpg",
-      "assets/renders/hotel-03.jpg",
-      "assets/renders/hotel-04.jpg",
-      "assets/renders/hotel-05.jpg",
-      "assets/renders/hotel-06.jpg",
-      "assets/renders/hotel-07.jpg",
-      "assets/renders/hotel-08.jpg"
-    ]
-  },
-  {
-    title:"House Design",
-    desc:"Konut iç mekanları için yatak odası, banyo, mutfak ve yaşam alanı render serisi.",
-    tags:["Konut","İç Mekan","Render"],
-    img:"assets/renders/house-01.jpg",
-    gallery:[
-      "assets/renders/house-01.jpg",
-      "assets/renders/house-02.jpg",
-      "assets/renders/house-03.jpg",
-      "assets/renders/house-04.jpg",
-      "assets/renders/house-05.jpg",
-      "assets/renders/house-06.jpg",
-      "assets/renders/house-07.jpg",
-      "assets/renders/house-08.jpg",
-      "assets/renders/house-09.jpg",
-      "assets/renders/house-10.jpg"
-    ]
-  },
-  {
-    title:"Commercial",
-    desc:"Ticari mekan, cephe ve ortak alan tasarımlarından seçilmiş görselleştirme serisi.",
-    tags:["Ticari","Konsept","Render"],
-    gallery:[
-      "assets/renders/commercial-01.jpg",
-      "assets/renders/commercial-02.jpg",
-      "assets/renders/commercial-03.jpg",
-      "assets/renders/commercial-04.jpg",
-      "assets/renders/commercial-05.jpg",
-      "assets/renders/commercial-06.jpg",
-      "assets/renders/commercial-07.jpg",
-      "assets/renders/commercial-08.jpg",
-      "assets/renders/commercial-09.jpg",
-      "assets/renders/commercial-10.jpg",
-      "assets/renders/commercial-11.jpg",
-      "assets/renders/commercial-12.jpg",
-      "assets/renders/commercial-13.jpg",
-      "assets/renders/commercial-14.jpg",
-      "assets/renders/commercial-15.jpg"
-    ]
-  },
-  {
-    title:"Historical Beta Han",
-    desc:"Tarihi yapının yeniden işlevlendirilmesi; kafe, kütüphane ve iç mekan tasarım önerileri.",
-    tags:["Restorasyon","Tarihi Yapı","İç Mekan"],
-    img:"assets/renders/beta-han-08.jpg",
-    gallery:[
-      "assets/renders/beta-han-08.jpg",
-      "assets/renders/beta-han-01.jpg",
-      "assets/renders/beta-han-05.jpg",
-      "assets/renders/beta-han-11.jpg",
-      "assets/renders/beta-han-02.jpg",
-      "assets/renders/beta-han-06.jpg",
-      "assets/renders/beta-han-10.jpg",
-      "assets/renders/beta-han-03.jpg",
-      "assets/renders/beta-han-07.jpg",
-      "assets/renders/beta-han-04.jpg",
-      "assets/renders/beta-han-09.jpg"
-    ]
-  },
-  {
-    title:"Furniture Design",
-    desc:"Fütüristik banyo ve ürün tasarımı için 3D konsept render serisi.",
-    tags:["Mobilya","Ürün Tasarımı","3D"],
-    img:"assets/renders/furniture-01.jpg",
-    gallery:[
-      "assets/renders/furniture-01.jpg",
-      "assets/renders/furniture-07.jpg",
-      "assets/renders/furniture-02.jpg",
-      "assets/renders/furniture-06.jpg",
-      "assets/renders/furniture-04.jpg",
-      "assets/renders/furniture-08.jpg",
-      "assets/renders/furniture-03.jpg",
-      "assets/renders/furniture-09.jpg",
-      "assets/renders/furniture-05.jpg"
-    ]
-  },
-  {
-    title:"Kolajlar",
-    desc:"Mimari anlatı, mekan atmosferi ve kavramsal temsil üzerine kolaj çalışmaları.",
-    tags:["Kolaj","Mimari Temsil","Konsept"],
-    img:"assets/renders/collage-01.jpg",
-    gallery:[
-      "assets/renders/collage-01.jpg",
-      "assets/renders/collage-02.jpg",
-      "assets/renders/collage-03.jpg",
-      "assets/renders/collage-04.jpg"
-    ]
-  },
-];
-const aiProjects = [
-  {title:"RAG Tabanlı Asistan", desc:"Belge tabanlı soru-cevap sistemi.", tags:["Python","RAG","LLM"], img:""},
-  {title:"Render Sınıflandırıcı", desc:"Mimari görselleri stiline göre etiketleyen model.", tags:["PyTorch","CV"], img:""},
-  {title:"Prompt Lab", desc:"Tasarım brief'lerini prompt'a çeviren araç.", tags:["LLM","Tool"], img:""},
-  {title:"Veri Görselleştirme", desc:"Model deneylerini izleyen dashboard.", tags:["Python","Viz"], img:""},
-];
-
-function card(p){
-  const img = p.gallery && p.gallery.length
-    ? p.gallery.map((src, i)=>`<img src="${src}" alt="${p.title} ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}">`).join("")
-    : p.img
-    ? `<img src="${p.img}" alt="${p.title}" loading="lazy">`
-    : `<div class="ph">[ görsel buraya ]<br>${p.title}</div>`;
-  const inner = `<div class="thumb${p.gallery && p.gallery.length ? ' gallery' : ''}">${img}</div>
-    <div class="card-body">
-      <h3>${p.title}${p.url ? ' <span style="color:var(--accent)">↗</span>' : ''}</h3>
-      <p>${p.desc}</p>
-      <div class="meta">${p.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>
-    </div>`;
-  if(p.url){
-    return `<a class="card reveal" href="${p.url}" target="_blank" rel="noopener">${inner}</a>`;
-  }
-  return `<article class="card reveal">${inner}</article>`;
-}
-const research = [
-  {title:"Yayın başlığı", desc:"Yayın özeti / konusu buraya gelecek.", tags:["Yayın"], img:""},
-  {title:"Konferans bildirisi", desc:"Sunum veya bildiri açıklaması.", tags:["Konferans"], img:""},
-];
-const projects = [
-  {title:"MumuFlow", desc:"Kişisel odak paneli: focus timer, görevler, duygu köşesi ve istatistikler.", tags:["Web App","Productivity"], img:"mumuflow-cover.svg", url:"https://mumuflow.com"},
-  {title:"Cute Planner", desc:"Sevimli ve sade bir dijital planlayıcı uygulaması.", tags:["Web App","Planner"], img:"planner-cover.jpg", url:"https://ewigelisse.github.io/cute-planner/"},
-];
-document.getElementById("arch-grid").innerHTML = archProjects.map(card).join("");
-document.getElementById("ai-grid").innerHTML = aiProjects.map(card).join("");
-document.getElementById("projects-grid").innerHTML = projects.map(card).join("");
-document.getElementById("research-grid").innerHTML = research.map(card).join("");
-
-/* ---------- world toggle ---------- */
+/* ===== i18n + content (galeri ve görsel koruma korunur) ===== */
+var LANG = (function(){ try { return localStorage.getItem('lang') || 'tr'; } catch(e){ return 'tr'; } })();
+var currentWorld = 'arch';
 const html = document.documentElement;
-const copy = {
-  arch:{
-    eyebrow:"M.Arch · 3D Artist · AI Engineering",
-    title:"Mekan tasarlıyorum,<br><em>sistemler</em> kuruyorum.",
-    lead:"Yüksek mimar (M.Arch) ve 3D artist olarak çalışıyorum; aynı zamanda yapay zeka mühendisliği üzerine eğitim görüyorum. Bu portfolyo iki dünyayı bir arada tutuyor — istediğin tarafa geç."
+
+const T = {
+  tr:{
+    'nav.arch':'Mimarlık','nav.ai':'AI','nav.projects':'Projeler','nav.research':'Research','nav.about':'Hakkımda','nav.contact':'İletişim',
+    'toggle.arch':'Mimarlık','toggle.ai':'AI',
+    'arch.tag':'01 — Mimarlık & İç Mekan','arch.h2':'Renderlar & Projeler','arch.p':"Konsept geliştirmeden fotogerçekçi render'a kadar iç mekan ve mimari çalışmalar.",
+    'btn.shutterstock':'Shutterstock portföyü ↗',
+    'ai.tag':'02 — AI Engineering','ai.h2':'Yapay Zeka Projeleri','ai.p':'Modellerden uygulamalara: deneyler, araçlar ve uçtan uca AI projeleri.',
+    'projects.tag':'03 — Projeler','projects.h2':'Web & Uygulamalar','projects.p':'Geliştirdiğim web uygulamaları ve dijital araçlar.',
+    'research.tag':'04 — Research','research.h2':'Akademik Çalışmalar','research.p':'Mimarlık ve yapay zekânın kesişimindeki araştırmalar, yayınlar ve akademik çalışmalar.',
+    'btn.researchgate':'ResearchGate profili ↗',
+    'about.h2':'Hakkımda',
+    'about.bio1':"Yüksek Mimar (M.Arch) ve 3D artist'im; aynı zamanda Mimarlık alanında doktora (PhD) öğrencisiyim ve yapay zeka mühendisliği üzerine lisans eğitimi alıyorum. Mimari ve görselleştirme arka planımı, veriyle ve modellerle düşünmenin disipliniyle birleştiriyorum.",
+    'about.bio2':'Bir tarafta malzeme, ışık ve oran; diğer tarafta veri, model ve sistem. İkisi de aynı soruyu soruyor: insanlar için daha iyi olan nasıl tasarlanır?',
+    'about.skills':'Yetkinlikler','about.edu':'Eğitim','about.exp':'Deneyim',
+    'footer.h2':'Birlikte çalışalım.','footer.sub':'Bir proje, iş birliği ya da sadece merhaba demek için ulaş.'
   },
-  ai:{
-    eyebrow:"AI Engineering · M.Arch",
-    title:"Modeller kuruyorum,<br><em>mekanlar</em> tasarlıyorum.",
-    lead:"Mimari ve 3D görselleştirme arka planımı yapay zeka mühendisliğiyle birleştiriyorum. Diğer tarafa geçmek için butona dokun."
+  en:{
+    'nav.arch':'Architecture','nav.ai':'AI','nav.projects':'Projects','nav.research':'Research','nav.about':'About','nav.contact':'Contact',
+    'toggle.arch':'Architecture','toggle.ai':'AI',
+    'arch.tag':'01 — Architecture & Interiors','arch.h2':'Renders & Projects','arch.p':'Interior and architectural work, from concept development to photorealistic rendering.',
+    'btn.shutterstock':'Shutterstock portfolio ↗',
+    'ai.tag':'02 — AI Engineering','ai.h2':'AI Projects','ai.p':'From models to applications: experiments, tools and end-to-end AI projects.',
+    'projects.tag':'03 — Projects','projects.h2':'Web & Apps','projects.p':'Web applications and digital tools I have built.',
+    'research.tag':'04 — Research','research.h2':'Academic Work','research.p':'Research, publications and academic work at the intersection of architecture and AI.',
+    'btn.researchgate':'ResearchGate profile ↗',
+    'about.h2':'About',
+    'about.bio1':"I'm an Architect (M.Arch) and 3D artist; I'm also a PhD student in Architecture and studying AI Engineering at undergraduate level. I combine my architecture and visualization background with the discipline of thinking through data and models.",
+    'about.bio2':'On one side: material, light and proportion; on the other: data, models and systems. Both ask the same question: how do we design something better for people?',
+    'about.skills':'Skills','about.edu':'Education','about.exp':'Experience',
+    'footer.h2':"Let's work together.",'footer.sub':'Reach out for a project, a collaboration, or just to say hello.'
   }
 };
+
+const COPY = {
+  tr:{
+    arch:{eyebrow:"M.Arch · 3D Artist · AI Engineering",title:"Mekan tasarlıyorum,<br><em>sistemler</em> kuruyorum.",lead:"Yüksek mimar (M.Arch) ve 3D artist olarak çalışıyorum; aynı zamanda yapay zeka mühendisliği üzerine eğitim görüyorum. Bu portfolyo iki dünyayı bir arada tutuyor — istediğin tarafa geç."},
+    ai:{eyebrow:"AI Engineering · M.Arch",title:"Modeller kuruyorum,<br><em>mekanlar</em> tasarlıyorum.",lead:"Mimari ve 3D görselleştirme arka planımı yapay zeka mühendisliğiyle birleştiriyorum. Diğer tarafa geçmek için butona dokun."}
+  },
+  en:{
+    arch:{eyebrow:"M.Arch · 3D Artist · AI Engineering",title:"I design <em>spaces</em>,<br>I build <em>systems</em>.",lead:"I work as an Architect (M.Arch) and 3D artist, while also studying AI engineering. This portfolio holds both worlds together — switch to whichever side you like."},
+    ai:{eyebrow:"AI Engineering · M.Arch",title:"I build <em>models</em>,<br>I design <em>spaces</em>.",lead:"I bring my architecture and 3D visualization background into AI engineering. Tap the button to switch sides."}
+  }
+};
+const HEROBTN = { tr:{a:'Mimari işleri gör',b:'AI projelerine geç'}, en:{a:'See architecture work',b:'Go to AI projects'} };
+const TAG = {'İç Mekan':'Interior','Hotel':'Hotel','V-Ray':'V-Ray','Konut':'Residential','Render':'Render','Ticari':'Commercial','Konsept':'Concept','Restorasyon':'Restoration','Tarihi Yapı':'Historic','Mobilya':'Furniture','Ürün Tasarımı':'Product Design','3D':'3D','Kolaj':'Collage','Mimari Temsil':'Architectural Repr.','Python':'Python','RAG':'RAG','LLM':'LLM','PyTorch':'PyTorch','CV':'CV','Tool':'Tool','Viz':'Viz','Web App':'Web App','Productivity':'Productivity','Planner':'Planner','Yayın':'Publication','Konferans':'Conference'};
+
+const archProjects = [
+  {title:"Hotel Design", desc:"Otel odası ve yaşam alanı için fotogerçekçi iç mekan render serisi.", en:"A photorealistic interior render series for a hotel room and living area.", tags:["İç Mekan","Hotel","V-Ray"], img:"assets/renders/hotel-01.jpg",
+    gallery:["assets/renders/hotel-01.jpg","assets/renders/hotel-02.jpg","assets/renders/hotel-03.jpg","assets/renders/hotel-04.jpg","assets/renders/hotel-05.jpg","assets/renders/hotel-06.jpg","assets/renders/hotel-07.jpg","assets/renders/hotel-08.jpg"]},
+  {title:"House Design", desc:"Konut iç mekanları için yatak odası, banyo, mutfak ve yaşam alanı render serisi.", en:"Interior render series for a home: bedroom, bathroom, kitchen and living spaces.", tags:["Konut","İç Mekan","Render"], img:"assets/renders/house-01.jpg",
+    gallery:["assets/renders/house-01.jpg","assets/renders/house-02.jpg","assets/renders/house-03.jpg","assets/renders/house-04.jpg","assets/renders/house-05.jpg","assets/renders/house-06.jpg","assets/renders/house-07.jpg","assets/renders/house-08.jpg","assets/renders/house-09.jpg","assets/renders/house-10.jpg"]},
+  {title:"Commercial", desc:"Ticari mekan, cephe ve ortak alan tasarımlarından seçilmiş görselleştirme serisi.", en:"A selected visualization series of commercial spaces, façades and shared areas.", tags:["Ticari","Konsept","Render"],
+    gallery:["assets/renders/commercial-01.jpg","assets/renders/commercial-02.jpg","assets/renders/commercial-03.jpg","assets/renders/commercial-04.jpg","assets/renders/commercial-05.jpg","assets/renders/commercial-06.jpg","assets/renders/commercial-07.jpg","assets/renders/commercial-08.jpg","assets/renders/commercial-09.jpg","assets/renders/commercial-10.jpg","assets/renders/commercial-11.jpg","assets/renders/commercial-12.jpg","assets/renders/commercial-13.jpg","assets/renders/commercial-14.jpg","assets/renders/commercial-15.jpg"]},
+  {title:"Historical Beta Han", desc:"Tarihi yapının yeniden işlevlendirilmesi; kafe, kütüphane ve iç mekan tasarım önerileri.", en:"Adaptive reuse of a historic building; cafe, library and interior design proposals.", tags:["Restorasyon","Tarihi Yapı","İç Mekan"], img:"assets/renders/beta-han-08.jpg",
+    gallery:["assets/renders/beta-han-08.jpg","assets/renders/beta-han-01.jpg","assets/renders/beta-han-05.jpg","assets/renders/beta-han-11.jpg","assets/renders/beta-han-02.jpg","assets/renders/beta-han-06.jpg","assets/renders/beta-han-10.jpg","assets/renders/beta-han-03.jpg","assets/renders/beta-han-07.jpg","assets/renders/beta-han-04.jpg","assets/renders/beta-han-09.jpg"]},
+  {title:"Furniture Design", desc:"Fütüristik banyo ve ürün tasarımı için 3D konsept render serisi.", en:"A 3D concept render series for futuristic bathroom and product design.", tags:["Mobilya","Ürün Tasarımı","3D"], img:"assets/renders/furniture-01.jpg",
+    gallery:["assets/renders/furniture-01.jpg","assets/renders/furniture-07.jpg","assets/renders/furniture-02.jpg","assets/renders/furniture-06.jpg","assets/renders/furniture-04.jpg","assets/renders/furniture-08.jpg","assets/renders/furniture-03.jpg","assets/renders/furniture-09.jpg","assets/renders/furniture-05.jpg"]},
+  {title:"Kolajlar", titleEn:"Collages", desc:"Mimari anlatı, mekan atmosferi ve kavramsal temsil üzerine kolaj çalışmaları.", en:"Collage studies on architectural narrative, spatial atmosphere and conceptual representation.", tags:["Kolaj","Mimari Temsil","Konsept"], img:"assets/renders/collage-01.jpg",
+    gallery:["assets/renders/collage-01.jpg","assets/renders/collage-02.jpg","assets/renders/collage-03.jpg","assets/renders/collage-04.jpg"]},
+];
+const aiProjects = [
+  {title:"RAG Tabanlı Asistan", titleEn:"RAG-based Assistant", desc:"Belge tabanlı soru-cevap sistemi.", en:"A document-based question answering system.", tags:["Python","RAG","LLM"], img:""},
+  {title:"Render Sınıflandırıcı", titleEn:"Render Classifier", desc:"Mimari görselleri stiline göre etiketleyen model.", en:"A model that labels architectural images by style.", tags:["PyTorch","CV"], img:""},
+  {title:"Prompt Lab", desc:"Tasarım brief'lerini prompt'a çeviren araç.", en:"A tool that turns design briefs into prompts.", tags:["LLM","Tool"], img:""},
+  {title:"Veri Görselleştirme", titleEn:"Data Visualization", desc:"Model deneylerini izleyen dashboard.", en:"A dashboard for tracking model experiments.", tags:["Python","Viz"], img:""},
+];
+const research = [
+  {title:"Yayın başlığı", titleEn:"Publication title", desc:"Yayın özeti / konusu buraya gelecek.", en:"Publication summary / topic goes here.", tags:["Yayın"], img:""},
+  {title:"Konferans bildirisi", titleEn:"Conference paper", desc:"Sunum veya bildiri açıklaması.", en:"Talk or paper description.", tags:["Konferans"], img:""},
+];
+const projects = [
+  {title:"MumuFlow", desc:"Kişisel odak paneli: focus timer, görevler, duygu köşesi ve istatistikler.", en:"Personal focus dashboard: focus timer, tasks, mood corner and stats.", tags:["Web App","Productivity"], img:"mumuflow-cover.svg", url:"https://mumuflow.com"},
+  {title:"Cute Planner", desc:"Sevimli ve sade bir dijital planlayıcı uygulaması.", en:"A cute and minimal digital planner app.", tags:["Web App","Planner"], img:"planner-cover.jpg", url:"https://ewigelisse.github.io/cute-planner/"},
+];
+const EDU = [
+  {t:"PhD, Architecture", tr:"International Balkan University · 2024 – günümüz", en:"International Balkan University · 2024 – present"},
+  {t:"M.Arch, Architecture", tr:"İstanbul Sabahattin Zaim Üniversitesi · 2022 – 2024 · GPA 4.00", en:"İstanbul Sabahattin Zaim University · 2022 – 2024 · GPA 4.00"},
+  {t:"B.Sc, Artificial Intelligence Engineering", tr:"International Balkan University · 2024 – 2028", en:"International Balkan University · 2024 – 2028"},
+  {t:"B.Arch, Architecture", tr:"İstanbul Sabahattin Zaim Üniversitesi · 2017 – 2021", en:"İstanbul Sabahattin Zaim University · 2017 – 2021"}
+];
+const EXP = [
+  {t:"Freelance 3D Artist", tr:"2024 – günümüz", en:"2024 – present"},
+  {t:"3D Artist", tr:"Rising Global · 2023", en:"Rising Global · 2023"},
+  {t:"Intern", tr:"MNA İnşaat · 2020 – 2021", en:"MNA İnşaat · 2020 – 2021"},
+  {t:"Intern", tr:"Aydın Büyükşehir Belediyesi · 2019", en:"Aydın Metropolitan Municipality · 2019"}
+];
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+function observeReveals(){ document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el)); }
+
+function tagTxt(t){ return (LANG==='en' && TAG[t]) ? TAG[t] : t; }
+function card(p){
+  const title = (LANG==='en' && p.titleEn) ? p.titleEn : p.title;
+  const desc = (LANG==='en' && p.en) ? p.en : p.desc;
+  const ph = LANG==='en' ? '[ image here ]' : '[ görsel buraya ]';
+  const img = p.gallery && p.gallery.length
+    ? p.gallery.map((src, i)=>`<img src="${src}" alt="${title} ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}">`).join("")
+    : p.img
+    ? `<img src="${p.img}" alt="${title}" loading="lazy">`
+    : `<div class="ph">${ph}<br>${title}</div>`;
+  const inner = `<div class="thumb${p.gallery && p.gallery.length ? ' gallery' : ''}">${img}</div>
+    <div class="card-body">
+      <h3>${title}${p.url ? ' <span style="color:var(--accent)">↗</span>' : ''}</h3>
+      <p>${desc}</p>
+      <div class="meta">${p.tags.map(t=>`<span class="chip">${tagTxt(t)}</span>`).join("")}</div>
+    </div>`;
+  if(p.url){ return `<a class="card reveal" href="${p.url}" target="_blank" rel="noopener">${inner}</a>`; }
+  return `<article class="card reveal">${inner}</article>`;
+}
+function renderContent(){
+  document.getElementById("arch-grid").innerHTML = archProjects.map(card).join("");
+  document.getElementById("ai-grid").innerHTML = aiProjects.map(card).join("");
+  document.getElementById("projects-grid").innerHTML = projects.map(card).join("");
+  document.getElementById("research-grid").innerHTML = research.map(card).join("");
+  document.getElementById("edu-list").innerHTML = EDU.map(e=>`<li><b>${e.t}</b><br>${LANG==='en'?e.en:e.tr}</li>`).join("");
+  document.getElementById("exp-list").innerHTML = EXP.map(e=>`<li><b>${e.t}</b><br>${LANG==='en'?e.en:e.tr}</li>`).join("");
+  observeReveals();
+}
+
 function setWorld(w){
+  currentWorld = w;
   html.setAttribute("data-world", w);
   document.querySelectorAll(".toggle button").forEach(b=>b.classList.toggle("active", b.dataset.w===w));
-  document.getElementById("hero-eyebrow").innerHTML = copy[w].eyebrow;
-  document.getElementById("hero-title").innerHTML = copy[w].title;
-  document.getElementById("hero-lead").innerHTML = copy[w].lead;
+  const c = COPY[LANG][w];
+  document.getElementById("hero-eyebrow").innerHTML = c.eyebrow;
+  document.getElementById("hero-title").innerHTML = c.title;
+  document.getElementById("hero-lead").innerHTML = c.lead;
 }
+
+function applyLang(lang){
+  LANG = lang;
+  try { localStorage.setItem('lang', lang); } catch(e){}
+  html.setAttribute('lang', lang);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const v=T[lang][el.dataset.i18n]; if(v!=null) el.innerHTML=v; });
+  document.getElementById('hero-cta1').textContent = HEROBTN[lang].a;
+  document.getElementById('hero-cta2').textContent = HEROBTN[lang].b;
+  const lb=document.getElementById('langBtn'); if(lb) lb.textContent = (lang==='tr')?'EN':'TR';
+  renderContent();
+  setWorld(currentWorld);
+}
+
 document.querySelectorAll(".toggle button").forEach(b=>{
   b.addEventListener("click",()=>setWorld(b.dataset.w));
 });
+document.getElementById('langBtn').addEventListener('click',function(){ applyLang(LANG==='tr'?'en':'tr'); });
+
 /* AI bölümüne kayınca otomatik koyu temaya geç */
 const aiSec = document.getElementById("ai");
 const archSec = document.getElementById("arch");
@@ -576,32 +554,21 @@ const io2 = new IntersectionObserver((entries)=>{
 },{threshold:[0.4]});
 io2.observe(aiSec); io2.observe(archSec);
 
-/* ---------- reveal on scroll ---------- */
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
-},{threshold:.15});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-
-/* hero metnini açılışta da kopya nesnesiyle eşitle */
-setWorld("arch");
-
 /* ---------- basic image protection ---------- */
 document.addEventListener("contextmenu", (event)=>{
-  if(event.target.closest(".thumb") || event.target.tagName === "IMG"){
-    event.preventDefault();
-  }
+  if(event.target.closest(".thumb") || event.target.tagName === "IMG"){ event.preventDefault(); }
 });
 document.addEventListener("dragstart", (event)=>{
-  if(event.target.tagName === "IMG"){
-    event.preventDefault();
-  }
+  if(event.target.tagName === "IMG"){ event.preventDefault(); }
 });
 document.addEventListener("keydown", (event)=>{
   const key = event.key.toLowerCase();
-  if((event.ctrlKey || event.metaKey) && ["s","u"].includes(key)){
-    event.preventDefault();
-  }
+  if((event.ctrlKey || event.metaKey) && ["s","u"].includes(key)){ event.preventDefault(); }
 });
+
+/* init */
+applyLang(LANG);
+observeReveals();
 </script>
 
 </body>
