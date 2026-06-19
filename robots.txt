@@ -11,8 +11,8 @@ Disallow: /
 User-agent: Wayback
 Disallow: /
 
-# Allow normal search engines to index the site
+# Allow normal search engines to index the site, but keep renders out of image search
 User-agent: *
-Disallow:
+Disallow: /assets/renders/
 
 Sitemap: https://muhteremhoser.com/sitemap.xml
