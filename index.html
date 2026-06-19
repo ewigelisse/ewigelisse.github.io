@@ -160,6 +160,7 @@ section{padding:96px 0;border-top:1px solid var(--line)}
 .thumb{
   aspect-ratio:4/3;background:var(--bg-soft);position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;
 }
 .thumb::after{
   content:"";position:absolute;inset:0;z-index:4;
@@ -628,16 +629,27 @@ const io2 = new IntersectionObserver((entries)=>{
 },{threshold:[0.4]});
 io2.observe(aiSec); io2.observe(archSec);
 
-/* ---------- basic image protection ---------- */
-document.addEventListener("contextmenu", (event)=>{
-  if(event.target.closest(".thumb") || event.target.tagName === "IMG"){ event.preventDefault(); }
+/* ---------- image protection ---------- */
+// Right-click / context menu disabled site-wide (deters "Save image as")
+document.addEventListener("contextmenu", (e)=>{ e.preventDefault(); }, {capture:true});
+// Block dragging images out
+document.addEventListener("dragstart", (e)=>{
+  if(e.target.tagName === "IMG" || e.target.closest(".thumb")){ e.preventDefault(); }
 });
-document.addEventListener("dragstart", (event)=>{
-  if(event.target.tagName === "IMG"){ event.preventDefault(); }
+// Block copy / cut / selection on images
+["copy","cut"].forEach(ev=>document.addEventListener(ev,(e)=>{
+  if(e.target && e.target.closest && e.target.closest(".thumb")){ e.preventDefault(); }
+}));
+document.addEventListener("selectstart",(e)=>{
+  if(e.target && e.target.closest && e.target.closest(".thumb")){ e.preventDefault(); }
 });
-document.addEventListener("keydown", (event)=>{
-  const key = event.key.toLowerCase();
-  if((event.ctrlKey || event.metaKey) && ["s","u"].includes(key)){ event.preventDefault(); }
+// Block save / view-source / print / devtools shortcuts (deterrent only)
+document.addEventListener("keydown", (e)=>{
+  const k = (e.key || "").toLowerCase();
+  const mod = e.ctrlKey || e.metaKey;
+  if(mod && ["s","u","p"].includes(k)){ e.preventDefault(); }
+  if(mod && e.shiftKey && ["i","j","c"].includes(k)){ e.preventDefault(); }
+  if(k === "f12"){ e.preventDefault(); }
 });
 
 /* init */
