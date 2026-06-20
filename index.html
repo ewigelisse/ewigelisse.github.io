@@ -413,7 +413,7 @@ html[data-world="ai"] .soon-pill{color:#5ee0c0;background:rgba(94,224,192,.12);b
 <footer id="contact" class="wrap">
   <h2 data-i18n="footer.h2">Birlikte çalışalım.</h2>
   <p style="color:var(--text-soft);max-width:40ch;margin:0 auto" data-i18n="footer.sub">Bir proje, iş birliği ya da sadece merhaba demek için ulaş.</p>
-  <form class="contact-form reveal" action="https://formsubmit.co/hosermuhterem@gmail.com" method="POST">
+  <form class="contact-form reveal" id="cform" method="POST">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://muhteremhoser.com/">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -675,6 +675,16 @@ document.addEventListener("keydown", (e)=>{
   if(mod && e.shiftKey && ["i","j","c"].includes(k)){ e.preventDefault(); }
   if(k === "f12"){ e.preventDefault(); }
 });
+
+/* contact form: e-posta kaynakta gizli, gönderim anında çözülür */
+(function(){
+  var cf = document.getElementById('cform');
+  if(cf){
+    cf.addEventListener('submit', function(){
+      cf.action = 'https://formsubmit.co/' + atob('aG9zZXJtdWh0ZXJlbUBnbWFpbC5jb20=');
+    });
+  }
+})();
 
 /* init */
 applyLang(LANG);
