@@ -253,6 +253,15 @@ footer h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,5
 footer .links{display:flex;gap:24px;justify-content:center;margin-top:30px;font-family:var(--font-mono);font-size:.85rem;flex-wrap:wrap}
 footer .links a{color:var(--text-soft);transition:color .3s}
 footer .links a:hover{color:var(--accent)}
+.contact-form{max-width:560px;margin:36px auto 8px;text-align:left;display:grid;gap:14px}
+.contact-form .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form label{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.5px;color:var(--text-soft);margin-bottom:6px;text-transform:uppercase}
+.contact-form input,.contact-form textarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font-family:var(--font-body);font-size:.95rem;transition:border-color .25s}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--accent)}
+.contact-form textarea{min-height:130px;resize:vertical}
+.contact-form button{justify-self:start;margin-top:4px;background:var(--accent);color:#fff;border:none;border-radius:30px;padding:13px 32px;font-family:var(--font-mono);font-size:.85rem;letter-spacing:.5px;cursor:pointer;transition:transform .25s var(--ease),opacity .25s}
+.contact-form button:hover{transform:translateY(-2px);opacity:.92}
+@media(max-width:520px){.contact-form .row2{grid-template-columns:1fr}}
 .copy{margin-top:48px;font-size:.78rem;color:var(--text-soft);font-family:var(--font-mono)}
 
 /* reveal on scroll */
@@ -404,6 +413,19 @@ html[data-world="ai"] .soon-pill{color:#5ee0c0;background:rgba(94,224,192,.12);b
 <footer id="contact" class="wrap">
   <h2 data-i18n="footer.h2">Birlikte çalışalım.</h2>
   <p style="color:var(--text-soft);max-width:40ch;margin:0 auto" data-i18n="footer.sub">Bir proje, iş birliği ya da sadece merhaba demek için ulaş.</p>
+  <form class="contact-form reveal" action="https://formsubmit.co/hosermuhterem@gmail.com" method="POST">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://muhteremhoser.com/">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="row2">
+      <div><label for="cf-ad" data-i18n="contact.name">Ad</label><input id="cf-ad" type="text" name="Ad" required></div>
+      <div><label for="cf-soyad" data-i18n="contact.surname">Soyad</label><input id="cf-soyad" type="text" name="Soyad" required></div>
+    </div>
+    <div><label for="cf-mail" data-i18n="contact.email">E-posta</label><input id="cf-mail" type="email" name="email" required></div>
+    <div><label for="cf-konu" data-i18n="contact.subject">Konu</label><input id="cf-konu" type="text" name="_subject" required></div>
+    <div><label for="cf-mesaj" data-i18n="contact.message">Mesaj</label><textarea id="cf-mesaj" name="Mesaj" required></textarea></div>
+    <button type="submit" data-i18n="contact.send">Gönder</button>
+  </form>
   <div class="links">
     <a href="https://www.linkedin.com/in/muhteremhoser/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.shutterstock.com/g/MuhteremH?rid=297482158" target="_blank" rel="noopener">Shutterstock</a>
@@ -433,7 +455,8 @@ const T = {
     'about.bio1':"Yüksek Mimar (M.Arch) ve 3D artist'im; aynı zamanda Mimarlık alanında doktora (PhD) öğrencisiyim ve yapay zeka mühendisliği üzerine lisans eğitimi alıyorum. Mimari ve görselleştirme arka planımı, veriyle ve modellerle düşünmenin disipliniyle birleştiriyorum.",
     'about.bio2':'Bir tarafta malzeme, ışık ve oran; diğer tarafta veri, model ve sistem. İkisi de aynı soruyu soruyor: insanlar için daha iyi olan nasıl tasarlanır?',
     'about.skills':'Yetkinlikler','about.edu':'Eğitim','about.exp':'Deneyim','about.certs':'Sertifikalar','cert.loc':'Skopje · Nisan 2025',
-    'footer.h2':'Birlikte çalışalım.','footer.sub':'Bir proje, iş birliği ya da sadece merhaba demek için ulaş.'
+    'footer.h2':'Birlikte çalışalım.','footer.sub':'Bir proje, iş birliği ya da sadece merhaba demek için ulaş.',
+    'contact.name':'Ad','contact.surname':'Soyad','contact.email':'E-posta','contact.subject':'Konu','contact.message':'Mesaj','contact.send':'Gönder'
   },
   en:{
     'nav.arch':'Architecture','nav.ai':'AI','nav.projects':'Projects','nav.research':'Research','nav.about':'About','nav.contact':'Contact',
@@ -448,7 +471,8 @@ const T = {
     'about.bio1':"I'm an Architect (M.Arch) and 3D artist; I'm also a PhD student in Architecture and studying AI Engineering at undergraduate level. I combine my architecture and visualization background with the discipline of thinking through data and models.",
     'about.bio2':'On one side: material, light and proportion; on the other: data, models and systems. Both ask the same question: how do we design something better for people?',
     'about.skills':'Skills','about.edu':'Education','about.exp':'Experience','about.certs':'Certificates','cert.loc':'Skopje · April 2025',
-    'footer.h2':"Let's work together.",'footer.sub':'Reach out for a project, a collaboration, or just to say hello.'
+    'footer.h2':"Let's work together.",'footer.sub':'Reach out for a project, a collaboration, or just to say hello.',
+    'contact.name':'First name','contact.surname':'Last name','contact.email':'Email','contact.subject':'Subject','contact.message':'Message','contact.send':'Send'
   }
 };
 
